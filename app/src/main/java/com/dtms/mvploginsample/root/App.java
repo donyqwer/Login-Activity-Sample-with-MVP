@@ -2,6 +2,8 @@ package com.dtms.mvploginsample.root;
 
 import android.app.Application;
 
+import com.dtms.mvploginsample.login.LoginModule;
+
 public class App extends Application {
     private ApplicationComponent component;
 
@@ -11,6 +13,7 @@ public class App extends Application {
 
         component = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
+                .loginModule(new LoginModule())
                 .build();
     }
 
